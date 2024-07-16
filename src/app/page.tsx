@@ -1,6 +1,22 @@
+"use client";
+import { useEffect } from 'react';
 import Image from "next/image";
+import { fetchTest } from "@/dataAccess/userApi";
 
 export default function Home() {
+
+  useEffect(() => {
+    const getData = async () => {
+      try {
+        const data = await fetchTest();
+        console.log(data);
+      } catch (error) {
+        console.error("Error fetching data: ", error);
+      }
+    };
+    getData();
+  }, []);
+
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
@@ -103,7 +119,7 @@ export default function Home() {
               -&gt;
             </span>
           </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
+          <p className="m-0 max-w-[30ch] text-sm opacity-50">
             Instantly deploy your Next.js site to a shareable URL with Vercel.
           </p>
         </a>
