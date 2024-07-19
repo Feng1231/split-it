@@ -1,10 +1,11 @@
 "use client"
 
-import SignUpForm from "@/components/signUp/organisms/SignUpForm";
+import SignUpForm from "@/components/auth/organisms/SignUpForm";
 
 const SignUpPage = () => {
     return (
         <div>
+            <title>Sign Up</title>
             <SignUpForm />
         </div>
     );

@@ -1,7 +1,7 @@
 // pages/index.jsx
 import React from 'react';
 import MainTemplate from '../templates/MainTemplate';
-
+import { signOutUser } from '@/dataAccess/userApi';
 const groups = [
   {
     iconSrc: '/path/to/icon1.png',
@@ -30,6 +30,12 @@ const IndexPage = () => {
   const handleAddExpense = () => {
     // Handle add expense action
   };
+  
+  const handleSignOut = async () => {
+    console.log('Signing out');
+    await signOutUser();
+    alert('Success', 'Signed out successfully');
+  };
 
   return (
     <MainTemplate
@@ -38,6 +44,7 @@ const IndexPage = () => {
       headerAmount="US$2.50"
       groups={groups}
       onAddExpense={handleAddExpense}
+      handleSignOut={handleSignOut}
     />
   );
 };

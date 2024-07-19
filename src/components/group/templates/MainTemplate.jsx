@@ -5,12 +5,12 @@ import Footer from '../organisms/Footer';
 import GroupSection from '../organisms/GroupSection';
 
 
-const MainTemplate = ({ headerTitle, headerAmount, groups, onAddExpense }) => {
+const MainTemplate = ({ headerTitle, headerAmount, groups, onAddExpense, handleSignOut }) => {
   return (
     <div className="min-h-screen bg-gray-100">
       <Header title={headerTitle} amount={headerAmount} />
       <GroupSection groups={groups} />
-      <Footer onAddExpense={onAddExpense} />
+      <Footer onAddExpense={onAddExpense} handleSignOut={handleSignOut} />
     </div>
   );
 };
